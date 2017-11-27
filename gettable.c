@@ -9,6 +9,7 @@
 #include <winsock2.h>
 #include <iphlpapi.h>
 #include <stdio.h>
+#include <gettable.h>
 
 #pragma comment(lib, "iphlpapi.lib")
 #pragma comment(lib, "ws2_32.lib")

@@ -4,14 +4,14 @@ package main
 //#include "gettable.c"
 import "C"
 import (
-	"fmt"
-	"unsafe"
 	"reflect"
-	"golang.org/x/sys/windows/registry"
 	"net"
 	"os"
-	"time"
+	"fmt"
 	"strconv"
+	"time"
+	"unsafe"
+	"golang.org/x/sys/windows/registry"
 )
 
 /*
@@ -36,6 +36,7 @@ func main() {
 
 	var pmib C.PMIB_TCPTABLE_OWNER_PID
 
+
 	hostname, err := os.Hostname()
 	if err != nil {
 		fmt.Println(err.Error())
@@ -55,7 +56,6 @@ func main() {
 	}
 
 	length := getIntfromDWORD(pmib.dwNumEntries)
-	fmt.Println(length)
 
 	tcptable := (*[1 << 10]C.MIB_TCPROW_OWNER_PID)(unsafe.Pointer(&pmib.table))[:length:length]
 
